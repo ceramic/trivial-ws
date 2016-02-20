@@ -3,9 +3,9 @@
   :maintainer "Fernando Borretti <eudoxiahp@gmail.com>"
   :license "MIT"
   :version "0.1"
-  :homepage ""
-  :bug-tracker ""
-  :source-control (:git "")
+  :homepage "https://github.com/ParenBook/trivial-ws"
+  :bug-tracker "https://github.com/ParenBook/trivial-ws/issues"
+  :source-control (:git "git@github.com:ParenBook/trivial-ws.git")
   :depends-on (:hunchensocket)
   :components ((:module "src"
                 :serial t
