@@ -6,7 +6,8 @@
            :clients
            :send
            :start
-           :stop)
+           :stop
+           :+default-address+)
   (:documentation "Trivial WebSockets."))
 (in-package :trivial-ws)
 
@@ -65,9 +66,12 @@
   (declare (ignore client))
   (funcall (on-message server) server message))
 
-(defun start (server port)
+(defparameter +default-address+ "0.0.0.0")
+
+(defun start (server port &key (address +default-address+))
   "Start the server. Returns a handler object."
   (let ((handler (make-instance 'hunchensocket:websocket-acceptor
+                                :address address
                                 :port port
                                 :websocket-timeout #x1FFFFF)))
     (push (lambda (request)
