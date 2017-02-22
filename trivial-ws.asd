@@ -6,7 +6,8 @@
   :homepage "https://github.com/ceramic/trivial-ws"
   :bug-tracker "https://github.com/ceramic/trivial-ws/issues"
   :source-control (:git "git@github.com:ceramic/trivial-ws.git")
-  :depends-on (:hunchensocket)
+  :depends-on (:hunchensocket
+               :cl-async)
   :components ((:module "src"
                 :serial t
                 :components
