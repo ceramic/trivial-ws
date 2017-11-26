@@ -2,7 +2,8 @@
   :author "Fernando Borretti <eudoxiahp@gmail.com>"
   :maintainer "Fernando Borretti <eudoxiahp@gmail.com>"
   :license "MIT"
-  :depends-on (:websocket-driver)
+  :depends-on (:websocket-driver
+               :cl-async)
   :components ((:module "src"
                 :serial t
                 :components
