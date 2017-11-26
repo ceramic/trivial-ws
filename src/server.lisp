@@ -69,7 +69,7 @@
   "Start the server. Returns a handler object."
   (let ((handler (make-instance 'hunchensocket:websocket-acceptor
                                 :port port
-                                :websocket-timeout 100000000)))
+                                :websocket-timeout 10000)))
     (push (lambda (request)
             (declare (ignore request))
             server)
