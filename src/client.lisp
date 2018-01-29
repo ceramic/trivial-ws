@@ -26,10 +26,10 @@
                 (funcall (client-on-message client) client message)))
     client))
 
-(defun send (client text)
+(defun send (client text &key callback)
   "Send text to the server."
   (with-slots (ws) client
-    (wsd:send ws text)))
+    (wsd:send ws text :callback callback)))
 
 (defmacro with-client-connection ((client) &body body)
   (let ((c (gensym)))

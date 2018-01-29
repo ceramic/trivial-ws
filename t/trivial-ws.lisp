@@ -35,7 +35,7 @@
     (trivial-ws.client:with-client-connection (client)
       (pass "Client connected")
       (sleep 1)
-      (ok (trivial-ws.client:send client "ping") "Send message")))
+      (ok (trivial-ws.client:send client "ping" :callback (lambda () t)) "Send message")))
   (ok (trivial-ws:stop handler) "Stop server")
   (sleep 1)
   (ok connectedp "Connected")
