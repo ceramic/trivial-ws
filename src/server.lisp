@@ -7,7 +7,8 @@
            :send
            :start
            :stop
-           :+default-address+)
+           :+default-address+
+           :+default-timeout+)
   (:documentation "Trivial WebSockets."))
 (in-package :trivial-ws)
 
