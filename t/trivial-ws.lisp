@@ -21,7 +21,7 @@
                                 (trivial-ws:send (first (trivial-ws:clients server))
                                                  message))))
        (handler)
-       (address "0.0.0.0")
+       (address "127.0.0.1")
        (port (find-port:find-port)))
   (ok (setf handler (trivial-ws:start server port :address address)) "Start server")
   (let ((client))
