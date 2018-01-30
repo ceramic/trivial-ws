@@ -7,7 +7,8 @@
            :send
            :start
            :stop
-           :+default-address+)
+           :+default-address+
+           :+default-timeout+)
   (:documentation "Trivial WebSockets."))
 (in-package :trivial-ws)
 
@@ -67,12 +68,13 @@
   (funcall (on-message server) server message))
 
 (defparameter +default-address+ "0.0.0.0")
+(defparameter +default-timeout+ 300)
 
-(defun start (server port &key (address +default-address+))
+(defun start (server port &key (address +default-address+) (timeout +default-timeout+))
   "Start the server. Returns a handler object."
   (let ((handler (make-instance 'hunchensocket:websocket-acceptor
                                 :port port
-                                :websocket-timeout 10000)))
+                                :websocket-timeout timeout)))
     (push (lambda (request)
             (declare (ignore request))
             server)
